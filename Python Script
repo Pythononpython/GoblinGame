@@ -1,0 +1,28 @@
+import random
+
+player_health_bar = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+player_health = 10
+def random_damag():
+    player_health - random_damage
+
+tick = 0
+running = True
+hit = "hit"
+hp = "hp"
+while running:
+    input = raw_input(" Take an action. ")
+    if input == "hit":
+        random_damage = random.choice(range(1, 6))
+        tick = 0
+        print("the Goblin took " + str(random_damage) + " damage!")
+        player_health = player_health - random_damage
+        if player_health <= 0:
+            print("YOU KILLED THE GOBLIN")
+            running = False
+        while tick < random_damage:
+            player_health_bar.remove(1)
+            player_health_bar.append(0)
+            tick += 1
+        print(" ")
+        print("       HEALTH " +str(player_health))
+        print(player_health_bar)
